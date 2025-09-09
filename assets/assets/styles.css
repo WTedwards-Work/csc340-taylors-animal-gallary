@@ -1,0 +1,17 @@
+/* --- HTML-only gallery filters using :has() --- */
+
+/* When any filter is checked, hide all card 
+.gallery-container:has(.gallery-filters input[type="checkbox"]:checked) .animal-card {
+  display: none !important;
+}
+
+/* Show cards for each checked type 
+.gallery-container:has(#filter-mammal:checked)    .animal-card[data-type="Mammal"],
+.gallery-container:has(#filter-bird:checked)      .animal-card[data-type="Bird"],
+.gallery-container:has(#filter-reptile:checked)   .animal-card[data-type="Reptile"],
+.gallery-container:has(#filter-amphibian:checked) .animal-card[data-type="Amphibian"] {
+  display: block !important;
+}
+
+/* Spacing for filter checkboxes 
+.gallery-filters .form-check { min-width: 110px; }
